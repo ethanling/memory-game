@@ -7,10 +7,10 @@ import Card from './Card';
 const Board = () => {
 	const StyledBoard = styled.div`
 		display: grid;
-		grid-template-columns: 50% 50%;
+		grid-template-columns: 1fr 1fr;
 	`;
 
-	const [deck, setDeck] = useState([]);
+    const [deck, setDeck] = useState([]);
 
 	// Duplicates inital set of cards so that each card has a matching counterpart
 	const duplicateImages = (arr) => {
@@ -39,7 +39,8 @@ const Board = () => {
 				<Card 
 					key={i} 
 					link={image.link} 
-					title={image.title} 
+                    title={image.title}
+                    flipped={false} 
 				/>
 			))}	
 		</StyledBoard>

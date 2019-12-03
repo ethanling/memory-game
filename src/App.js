@@ -6,8 +6,8 @@ import styled from 'styled-components';
 function App() {
 
 	const StyledApp = styled.div`
-		height: 100vh;
-		width: 100vw;
+		/* height: 100vh;
+		width: 100vw; */
 		background-color: #f1f1f1;
 		display: flex;
 		justify-content: center;
