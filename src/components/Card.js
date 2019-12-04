@@ -7,7 +7,6 @@ const StyledCardFront = styled.div`
     justify-content: center;
     height: 200px;
 `;
-
 const StyledCardBack = styled.div`
     height: 200px;
     width: 200px;
