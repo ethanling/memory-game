@@ -3,13 +3,13 @@ import ReactCardFlip from 'react-card-flip';
 import styled from 'styled-components';
 
 const StyledFront = styled.div`
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f3f3f3;
+    background: #eee;
     border: 10px solid #c1c1c1;
     box-shadow: 0 0 15px 0 #999;
 `;
@@ -21,8 +21,8 @@ const StyledCardImage = styled.img`
 `;
 
 const StyledBack = styled.div`
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     margin: 20px;
     background: #ccc;
     border: 10px solid #999;
@@ -30,26 +30,26 @@ const StyledBack = styled.div`
 `;
 
 const Front = ({title, link, toggleFlip}) => (
-    <StyledFront onClick={toggleFlip}>
+    <StyledFront onClick={() => toggleFlip(title)}>
 		<StyledCardImage src={link} alt={title} />
 	</StyledFront>
 )
 
-const Back = ({ toggleFlip }) => (
-	<StyledBack onClick={toggleFlip}></StyledBack>
+const Back = ({ title, toggleFlip }) => (
+	<StyledBack onClick={() => toggleFlip(title)}></StyledBack>
 )
 
 const Card = ({title, link}) => {
 	const [isFlipped, setFlipped] = useState(false);
-	const toggleFlip = () => {
+	const toggleFlip = (title) => {
         setFlipped(prevState => !prevState);
-        console.log("toggled")
+        console.log(title)
     }
 
 	return (
 		<ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
 			<Front title={title} link={link} toggleFlip={toggleFlip} />	
-			<Back toggleFlip={toggleFlip} />
+			<Back title={title} toggleFlip={toggleFlip} />
 		</ReactCardFlip>
 	)
 }

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import images from '../images/index.js';
+import ScoreBoard from './ScoreBoard';
 import Card from './NewCard';
-
 
 const Board = () => {
 	const StyledBoard = styled.div`
@@ -35,6 +35,7 @@ const Board = () => {
 
 	return (
 		<StyledBoard>
+            <ScoreBoard />
 			{deck.map((image, i) => (
 				<Card 
 					key={i} 
