@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import images from '../images/index.js';
-import Card from './Card';
+import Card from './NewCard';
 
 
 const Board = () => {
@@ -31,7 +31,7 @@ const Board = () => {
 		const unshuffledDeck = duplicateImages(images);
 		const shuffledDeck = shuffleCards(unshuffledDeck);
 		setDeck(shuffledDeck)		
-	}, [])
+	}, []);
 
 	return (
 		<StyledBoard>
@@ -40,7 +40,6 @@ const Board = () => {
 					key={i} 
 					link={image.link} 
                     title={image.title}
-                    flipped={false} 
 				/>
 			))}	
 		</StyledBoard>
