@@ -40,7 +40,9 @@ const Back = ({ title, toggleFlip }) => (
 )
 
 const Card = ({title, link}) => {
+
 	const [isFlipped, setFlipped] = useState(false);
+	
 	const toggleFlip = (title) => {
         setFlipped(prevState => !prevState);
         console.log(title)
@@ -48,8 +50,8 @@ const Card = ({title, link}) => {
 
 	return (
 		<ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" >
-			<Front title={title} link={link} toggleFlip={toggleFlip} />	
 			<Back title={title} toggleFlip={toggleFlip} />
+			<Front title={title} link={link} toggleFlip={toggleFlip} />	
 		</ReactCardFlip>
 	)
 }
